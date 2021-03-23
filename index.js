@@ -30,15 +30,16 @@ const resolvePost = req =>
     });
 
 http.createServer(async (req, res) => {
-    console.log('receive request')
+    console.log('receive request', req.method)
     console.log(req.url)
     if (req.method === 'POST' && req.url === '/') {
+        console.log('im in')
         const data = await resolvePost(req);
         const projectDir = path.resolve(`./${data.repository.name}`)
         deleteFolderRecursive(projectDir)
 
         // 拉取仓库最新代码
-        execSync(`git clone https://github.com/yeyan1996/${data.repository.name}.git ${projectDir}`, {
+        execSync(`git clone https://github.com/fan12306/${data.repository.name}.git ${projectDir}`, {
             stdio: 'inherit',
         })
 
