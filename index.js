@@ -40,7 +40,7 @@ http.createServer(async (req, res) => {
 
         console.log('克隆代码地址为:', `git//github.com/fan12306/${data.repository.name}.git ${projectDir}`)
         // 拉取仓库最新代码
-        execSync(`git clone git://github.com/fan12306/${data.repository.name}.git ${projectDir}`, {
+        execSync(`git clone https://github.com.cnpmjs.org/fan12306/${data.repository.name}.git ${projectDir}`, {
             stdio: 'inherit',
         })
 
