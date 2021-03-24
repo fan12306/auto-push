@@ -68,6 +68,8 @@ http.createServer(async (req, res) => {
 
         console.log('deploy success')
         res.end('ok')
+    }else {
+        res.end('ok')
     }
 }).listen(3000, () => {
     console.log('server is ready')
