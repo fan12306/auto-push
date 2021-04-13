@@ -44,7 +44,6 @@ const PageHome = (props) => {
                 <RenderMenu
                     menus={privateRoutes}
                     handleClickMenuItem={props.handleClickMenuItem}
-
                 />
             </Sider>
             <Layout className="site-layout">
