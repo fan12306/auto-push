@@ -40,6 +40,7 @@ function itemRender(route, params, routes) {
 
 
 function getMenuList() {
+    // ceshi
     // 利用闭包缓存targetList
     let targetList = []
     const step = (defaultMenuList, routes) => {
