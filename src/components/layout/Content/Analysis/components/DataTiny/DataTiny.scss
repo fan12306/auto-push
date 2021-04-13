@@ -1,0 +1,62 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  background: #fff;
+
+  .left {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+
+    .l-side {
+      display: flex;
+      flex-direction: column;
+
+      .title {
+        font-size: 14px;
+        color: #596c8e;
+        margin-bottom: 12px;
+      }
+
+      .num-box {
+        display: flex;
+        flex-direction: row;
+        height: 30px;
+
+        .shape {
+          width: 2px;
+          height: 100%;
+          background-color: #4577ff;
+          border-radius: 14px;
+        }
+
+        .num {
+          color: #596c8e;
+          font-size: 32px;
+          letter-spacing: 2px;
+          margin-left: 14px;
+          margin-right: 4px;
+          line-height: 30px;
+        }
+
+        .up {
+          font-size: 26px;
+          color: #00c292;
+          transform: rotate(45deg);
+          line-height: 30px;
+          margin-right: 10px;
+        }
+
+        .percent {
+          color: #c4c9d2;
+          font-size: 20px;
+          line-height: 30px;
+        }
+      }
+    }
+  }
+
+  .right {
+    height: 100%;
+  }
+}

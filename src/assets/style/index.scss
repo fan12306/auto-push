@@ -2,6 +2,10 @@
 @import './realize/animation';
 @import './realize/transition';
 @import './realize/global';
+@import "./realize/display";
+@import "realize/ant-design-variable";
+@import "../iconfont/iconfont.css";
+@import "./realize/test.less";
 
 .lin-container {
   .el-divider--horizontal {
@@ -10,7 +14,7 @@
   .lin-title {
     height: 59px;
     line-height: 59px;
-    color: $parent-title-color;
+    //color: $parent-title-color;
     font-size: 16px;
     font-weight: 500;
     text-indent: 40px;

@@ -1,46 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="5100b210-e975-4bbe-806a-36be3e2e5c3b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/image/______.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/image/____icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/image/about/avatar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/image/about/header-bg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/image/about/icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/image/about/icon1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/image/about/icon2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/image/about/icon3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/image/about/icon4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/image/about/open-source.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/image/about/qrcode.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/image/about/team-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/image/about/welcome.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/image/error-page/404.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/image/error-page/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/image/login/login-ba.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/image/login/login-btn.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/image/login/nickname.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/image/login/password.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/image/login/team-name.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/image/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/image/mobile-logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/image/user/corner.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/image/user/user-bg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/image/user/user.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/image/user/user.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/style/index.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/style/realize/animation.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/style/realize/element-variable.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/style/realize/global.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/style/realize/lin-variable.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/style/realize/mixin.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/style/realize/reset.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/style/realize/transition.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/style/share.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Login/Login.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Login/Login.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/env.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/getHttpsConfig.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/jest/babelTransform.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/jest/cssTransform.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/jest/fileTransform.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/modules.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/paths.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/pnpTs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/webpack.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/webpackDevServer.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/craco-config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/build.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/start.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/iconfont/iconfont.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/iconfont/iconfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/iconfont/iconfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/iconfont/iconfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/iconfont/iconfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/iconfont/iconfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/style/realize/ant-design-variable.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/style/realize/display.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/style/realize/my-theme-file.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/style/realize/test.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/layout/Content/About/About.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/layout/Content/About/About.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/layout/Content/About/components/Artical/Artical.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/layout/Content/About/components/Artical/Artical.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/layout/Content/About/components/Personal/Personal.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/layout/Content/About/components/Personal/Personal.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/layout/Content/About/components/QuantityItem/QuantityItem.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/layout/Content/About/components/QuantityItem/QuantityItem.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/layout/Content/Analysis/Analysis.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/layout/Content/Analysis/Analysis.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/layout/Content/Analysis/components/DataColumn/DataColumn.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/layout/Content/Analysis/components/DataColumn/DataColumn.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/layout/Content/Analysis/components/DataLine/DataLine.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/layout/Content/Analysis/components/DataRadar/DataRadar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/layout/Content/Analysis/components/DataRadar/DataRadar.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/layout/Content/Analysis/components/DataRose/DataRose.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/layout/Content/Analysis/components/DataTiny/DataTiny.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/layout/Content/Analysis/components/DataTiny/DataTiny.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/layout/Content/Blog/BlogEdit/BlogEdit.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/layout/Content/Blog/BlogEdit/BlogEdit.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/layout/Content/Blog/BlogList/Blog.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/layout/Content/Blog/BlogList/Blog.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/layout/Content/Center/Center.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/layout/Content/Content.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/layout/Content/Content.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/layout/Menu/Menu.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/layout/Menu/Menu.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/layout/Operator/Operator.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/layout/Operator/Operator.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/layout/Tag/Tag.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/layout/Tag/Tag.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/config/error-code.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/config/global.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/config/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/config/stage/admin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/config/stage/book.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/config/stage/center.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/config/stage/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/config/stage/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/AuthPage/AuthPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/ErrorPage/ErrorPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Home/Home.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Home/Home.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/LoadingPage/LoadingPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/LoadingPage/LoadingPage.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/router/HOC/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/router/HOC/withLoginPermission.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/router/HOC/withUserPermission.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/router/route.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/router/routes/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/router/routes/privateRoutes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/router/routes/publicRoutes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/action-types.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/actions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/reducers/nav.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/reducers/user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/axios.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/localstorage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/util.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/style/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/style/index.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/style/realize/element-variable.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/style/realize/element-variable.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/style/realize/global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/style/realize/global.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/style/realize/lin-variable.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/style/realize/lin-variable.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/style/realize/reset.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/style/realize/reset.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Login/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Login/Login.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Login/Login.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,25 +132,38 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="javascript.nodejs.core.library.configured.version" value="12.19.0" />
+    <property name="javascript.nodejs.core.library.typings.version" value="12.19.0" />
+    <property name="js.last.introduce.type" value="CONST" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/assets/iconfont" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+    <property name="settings.editor.selected.configurable" value="settings.webpack" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/assets/iconfont" />
+      <recent name="$PROJECT_DIR$/src/router" />
+      <recent name="$PROJECT_DIR$/src/store" />
+      <recent name="$PROJECT_DIR$/src/utils" />
       <recent name="$PROJECT_DIR$/src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/layout/Content/Blog/BlogList" />
+      <recent name="$PROJECT_DIR$/src/components/layout/Content" />
+      <recent name="$PROJECT_DIR$/src/router/routes" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
@@ -126,7 +205,9 @@
       <option name="presentableId" value="Default" />
       <updated>1616401971074</updated>
       <workItem from="1616401973996" duration="11257000" />
-      <workItem from="1616483131341" duration="17574000" />
+      <workItem from="1616483131341" duration="52590000" />
+      <workItem from="1616980744711" duration="124821000" />
+      <workItem from="1617867410766" duration="30121000" />
     </task>
     <task id="LOCAL-00001" summary="测试">
       <created>1616403102624</created>
@@ -268,7 +349,21 @@
       <option name="project" value="LOCAL" />
       <updated>1616569975500</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="[A] 提交asset中的图片以及样式">
+      <created>1616636009412</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1616636009412</updated>
+    </task>
+    <task id="LOCAL-00022" summary="[A] idea配置文件（可删除）">
+      <created>1616636083750</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1616636083750</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -304,7 +399,9 @@
     <MESSAGE value="[M] 将项目框架修改为React，并且初始化项目" />
     <MESSAGE value="[M] 整理src文件夹，删除没有必要的代码；" />
     <MESSAGE value="[A] 提交public文件" />
-    <option name="LAST_COMMIT_MESSAGE" value="[A] 提交public文件" />
+    <MESSAGE value="[A] 提交asset中的图片以及样式" />
+    <MESSAGE value="[A] idea配置文件（可删除）" />
+    <option name="LAST_COMMIT_MESSAGE" value="[A] idea配置文件（可删除）" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

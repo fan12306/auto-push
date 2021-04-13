@@ -1,0 +1,39 @@
+@import "~@/assets/style/share.scss";
+
+.operation-container {
+  @include flex();
+  align-items: center;
+  min-height: 46px;
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 100%;
+
+  .nav-content {
+    @include flex(space-between, center);
+    width: 100%;
+
+    .nav-txt {
+      color: #3963bc;
+      margin-left: 20px;
+    }
+
+    .nav-operators-wrapper {
+      @include flex(space-around, center);
+      width: 168px;
+      height: 40px;
+      position: fixed;
+      left: 87%;
+
+      img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+
+
+
+
