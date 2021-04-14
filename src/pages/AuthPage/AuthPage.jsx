@@ -3,7 +3,7 @@ import React from 'react';
 const AuthPage = () => {
     return (
         <div>
-            403
+            403ya
         </div>
     );
 };
