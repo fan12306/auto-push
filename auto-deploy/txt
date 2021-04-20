@@ -1,0 +1,7 @@
+sh newOrigin.sh /usr/local/nginx/html/code/auto-push /usr/local/nginx/html/v1 /usr/local/nginx/html/bak/auto-push auto-push git@github.com:fan12306/auto-push.git build /usr/local/nginx/html/code
+git@github.com:fan12306/auto-push.git
+
+/usr/local/nginx/html/code/auto-push
+
+
+/usr/local/nginx/html/code/auto-push /usr/local/nginx/html/v1 /usr/local/nginx/html/bak/auto-push auto-push build

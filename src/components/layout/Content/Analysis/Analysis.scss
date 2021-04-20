@@ -1,0 +1,34 @@
+
+
+#bar-container {
+  background: #fff;
+  //margin: 20px;
+}
+
+#radar-container {
+  background: #fff;
+  //margin: 20px;
+}
+
+.analysis-container {
+  padding: 20px;
+  background: #ececec;
+
+  .grid-content {
+    background: #ffffff;
+    box-shadow: 0 2px 14px 0 rgba(243, 243, 243, 1);
+    border-radius: 8px;
+    min-height: 36px;
+    margin-bottom: 20px;
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .none {
+    display: none;
+  }
+}
+
+
+
