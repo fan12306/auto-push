@@ -8,10 +8,10 @@ const defaultStore = {
 //eslint-disable-next-line
 export default (store = defaultStore, actions) => {
     let newStore = JSON.parse(JSON.stringify(store));
-    console.log("actions", actions, store);
     switch (actions.type) {
             // 设置标签
         case SET_TAGS:
+            if(!newStore?.tags || !actions.value) return null
             const currentTag = newStore.tags.find(item => item.title === actions.value.title);
             if (!currentTag) {
                 newStore.tags.unshift(actions.value);

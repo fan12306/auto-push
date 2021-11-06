@@ -10,7 +10,7 @@ import {
 } from '@/utils/localstorage'
 
 const config = {
-  baseURL: Config.baseURL || process.env.apiUrl || '',
+  baseURL: process.env.NODE_ENV === "development" ? Config.devBaseURL || process.env.apiUrl || '' : Config.baseURL,
   timeout: 5 * 1000, // 请求超时时间设置
   crossDomain: true,
   // withCredentials: true, // Check cross-site Access-Control
@@ -57,6 +57,10 @@ _axios.interceptors.request.use(
         source: 'axiosInterceptors',
         message: 'request need url',
       })
+    }
+
+    if(process.env.NODE_ENV !== "development") {
+      reqConfig.url = '/api' + reqConfig.url
     }
 
     if (!reqConfig.method) {
@@ -164,7 +168,7 @@ _axios.interceptors.response.use(
           }
         }
         // 第一种情况：默认直接提示后端返回的异常信息；特殊情况：如果本次请求添加了 handleError: true，用户自己try catch，框架不做处理
-        if (res.config.handleError) {
+        if (res.config?.config?.handleError) {
           return reject(res)
         }
         // 第二种情况：采用前端自己的一套异常提示信息；特殊情况：如果本次请求添加了 showBackend: true, 弹出后端返回错误信息。
@@ -239,12 +243,12 @@ _axios.interceptors.response.use(
  * @param {object} data
  * @param {object} params
  */
-export function post(url, data = {}, params = {}) {
+export function post(url, data = {}, config = {}) {
   return _axios({
     method: 'post',
     url,
     data,
-    params,
+    config,
   })
 }
 
@@ -252,11 +256,11 @@ export function post(url, data = {}, params = {}) {
  * @param {string} url
  * @param {object} params
  */
-export function get(url, params = {}) {
+export function get(url, config = {}) {
   return _axios({
     method: 'get',
     url,
-    params,
+    config,
   })
 }
 
@@ -265,11 +269,11 @@ export function get(url, params = {}) {
  * @param {object} data
  * @param {object} params
  */
-export function put(url, data = {}, params = {}) {
+export function put(url, data = {}, config = {}) {
   return _axios({
     method: 'put',
     url,
-    params,
+    config,
     data,
   })
 }
@@ -278,11 +282,11 @@ export function put(url, data = {}, params = {}) {
  * @param {string} url
  * @param {object} params
  */
-export function _delete(url, params = {}) {
+export function _delete(url, config = {}) {
   return _axios({
     method: 'delete',
     url,
-    params,
+    config,
   })
 }
 

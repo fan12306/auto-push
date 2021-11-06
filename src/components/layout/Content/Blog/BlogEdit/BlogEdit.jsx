@@ -1,143 +1,125 @@
-import React, {useEffect} from 'react';
-import SimpleMDE from 'simplemde'
-import marked from 'marked'
-import highlight from 'highlight.js'
-import 'simplemde/dist/simplemde.min.css'
-import {Button, Input, Select} from 'antd'
+import React, {useEffect, useState} from 'react';
+import {Button, Col, Form, Input, Row, Select} from 'antd'
+import './BlogEdit.scss'
+import Blog from "@/model/blog";
+import BraftEditorComponent from "@components/layout/Content/Blog/BlogEdit/components/BraftEditor.jsx";
 
 const BlogEdit = () => {
-    const normalCenter = {
-        textAlign: 'center',
-        marginBottom: 10,
+    const [title, setTitle] = useState('');
+    const [keyword, setKeyword] = useState('');
+    const [status, setStatus] = useState([]);
+    const [pageTags, setPageTags] = useState([]);
+    const [content, setContent] = useState('');
+
+    // 网络请求
+    const [typeList, setTypeList] = useState([])
+    const [statusList, setStatusList] = useState([])
+    const tailLayout = {
+        wrapperCol: {
+            offset: 3
+        },
     };
-    const stateDefault = '发布'; // 文章发布状态 => 0 草稿，1 发布
-    const typeDefault = '普通文章'; // 文章类型 => 1: 普通文章，2: 简历，3: 管理员介绍
-    const children = [];
+
+    /**
+     * tags与status的请求
+     */
     useEffect(() => {
-        const test = new SimpleMDE({
-            element: document.getElementById('editor').childElementCount,
-            autofocus: true,
-            autosave: true,
-            previewRender: function (plainText) {
-                return marked(plainText, {
-                    renderer: new marked.Renderer(),
-                    gfm: true,
-                    pedantic: false,
-                    sanitize: false,
-                    tables: true,
-                    breaks: true,
-                    smartLists: true,
-                    smartypants: true,
-                    highlight: function (code) {
-                        return highlight.highlightAuto(code).value;
-                    }
-                });
-            },
-        })
+        const fetch = async () => {
+            const result = await initBlogConfig();
+            console.log('re', result)
+            setTypeList(result.typeList)
+            setStatusList(result.statusList)
+        }
+        fetch()
+        return () => {
+            setTypeList([])
+            setStatusList([])
+        }
     }, [])
+
+    const handleSubmit = async () => {
+        const params = {
+            content, title, keyword, status, tags: pageTags
+        }
+        await new Blog().createBlog(params);
+    }
+
+    const handleGetContent = async (value) => {
+        setContent(value.toHTML());
+        console.log('content', content);
+    }
+
+
+
     return (
         <div>
-            <Input
-                style={normalCenter}
-                addonBefore="标题"
-                size="large"
-                placeholder="标题"
-                name="title"
-
-            />
-            <Input
-                style={normalCenter}
-                addonBefore="作者"
-                size="large"
-                placeholder="作者"
-                name="author"
-
-            />
-            <Input
-                style={normalCenter}
-                addonBefore="关键字"
-                size="large"
-                placeholder="关键字"
-                name="keyword"
-
-            />
-            <Input
-                style={normalCenter}
-                addonBefore="描述"
-                size="large"
-                placeholder="描述"
-                name="desc"
-            />
-            <Input
-                style={normalCenter}
-                addonBefore="封面链接"
-                size="large"
-                placeholder="封面链接"
-                name="img_url"
-            />
-
-            <Select
-                style={{width: 200, marginBottom: 20}}
-                placeholder="选择发布状态"
-                defaultValue={stateDefault}
-            >
-                {/*  0 草稿，1 发布 */}
-                <Select.Option value="0">草稿</Select.Option>
-                <Select.Option value="1">发布</Select.Option>
-            </Select>
-
-            <Select
-                style={{width: 200, marginLeft: 10, marginBottom: 20}}
-                placeholder="选择文章类型"
-                defaultValue={typeDefault}
-            >
-                {/* 文章类型 => 1: 普通文章，2: 简历，3: 管理员介绍 */}
-                <Select.Option value="1">普通文章</Select.Option>
-                <Select.Option value="2">简历</Select.Option>
-                <Select.Option value="3">管理员介绍</Select.Option>
-            </Select>
-
-            <Select
-                style={{width: 200, marginLeft: 10, marginBottom: 20}}
-                placeholder="选择文章转载状态"
-            >
-                {/* 0 原创，1 转载，2 混合 */}
-                <Select.Option value="0">原创</Select.Option>
-                <Select.Option value="1">转载</Select.Option>
-                <Select.Option value="2">混合</Select.Option>
-            </Select>
-
-            <Select
-                allowClear
-                mode="multiple"
-                style={{width: 200, marginLeft: 10, marginBottom: 20}}
-                placeholder="标签"
-            >
-                {children}
-            </Select>
-            <Select
-                allowClear
-                mode="multiple"
-                style={{width: 200, marginLeft: 10, marginBottom: 10}}
-                placeholder="文章分类"
-            >
-            </Select>
-            <div>
-                <Button
-                    onClick={() => {
-                    }}
-                    style={{marginBottom: '10px'}}
-                    type="primary"
-                >
-                    提交
-                </Button>
+            <div className="header">
+                <div className="title">博客创作</div>
             </div>
-
-            <div title="添加与修改文章" width="1200px">
-                <textarea id="editor" style={{marginBottom: 20, width: 800}} size="large" rows={6}/>
+            <div className={'edit-wrapper'}>
+                <Row>
+                    <Col lg={16} md={20} sm={24} xs={24}>
+                        <Form labelAlign={'right'} labelCol={{span: 3}}>
+                            <Form.Item label={'标题'}>
+                                <Input placeholder="标题" value={title} onChange={(e) => setTitle(e.target.value)}/>
+                            </Form.Item>
+                            <Form.Item label={'关键字'}>
+                                <Input placeholder="关键字" value={keyword} onChange={(e) => setKeyword(e.target.value)}/>
+                            </Form.Item>
+                            <Form.Item label={'发布状态'}>
+                                <Row>
+                                    <Col span={12}>
+                                        <Select
+                                            style={{touchAction: "pan-y"}}
+                                            placeholder="选择发布状态"
+                                            onChange={(option) => setStatus(option)}
+                                            value={status}
+                                        >
+                                            {statusList.map(item => {
+                                                return (<Select.Option key={item.code}
+                                                                       value={item.code}>{item.status}</Select.Option>)
+                                            })}
+                                        </Select>
+                                    </Col>
+                                    <Col span={12}>
+                                        <Select
+                                            allowClear
+                                            mode="multiple"
+                                            placeholder="标签"
+                                            aria-readonly={true}
+                                            onChange={(option) => setPageTags(option)}
+                                            value={pageTags}
+                                        >
+                                            {typeList.map(item => {
+                                                return (<Select.Option key={item.code}
+                                                                       value={item.code}>{item.type}</Select.Option>)
+                                            })}
+                                        </Select>
+                                    </Col>
+                                </Row>
+                            </Form.Item>
+                            <Form.Item label={'博客内容'} rows={7}>
+                               <BraftEditorComponent handleGetContent={handleGetContent}/>
+                            </Form.Item>
+                            <Form.Item {...tailLayout}>
+                                <Button type="primary" onClick={handleSubmit} loading={false}>提交</Button>
+                            </Form.Item>
+                        </Form>
+                    </Col>
+                </Row>
             </div>
         </div>
     );
 };
+
+/***
+ * 初始化博客页面
+ * @return {Promise<{typeList: *, statusList: *}>}
+ */
+const initBlogConfig = async () => {
+    const typeList = await new Blog().getBlogTypeList();
+    const statusList = await new Blog().getBlogStatusList();
+    return {typeList, statusList}
+}
 
 export default BlogEdit;

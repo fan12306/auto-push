@@ -26,10 +26,10 @@ const PageHome = (props) => {
         if(props.currentTag.title === value.title && matchTagIndex > -1 ) {
             // 匹配到了最后一个tag，并且当前选中,跳转前面一个route
             if(matchTagIndex === props.tags.length -1) {
-                history.push(props.tags[matchTagIndex-1].route);
+                history.push(props.tags[matchTagIndex-1].path);
                 props.handleMatchTag(props.tags[matchTagIndex-1])
             }else {
-                history.push(props.tags[matchTagIndex+1].route)
+                history.push(props.tags[matchTagIndex+1].path)
                 props.handleMatchTag(props.tags[matchTagIndex+1])
             }
         }
@@ -69,7 +69,7 @@ const PageHome = (props) => {
 }
 
 const renderNavTag = (tags, handleCloseTag, handleClickTag) => {
-    if(tags.length <= 1) {
+    if(!tags || tags.length <= 1) {
         return
     }
     return (

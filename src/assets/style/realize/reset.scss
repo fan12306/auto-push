@@ -125,7 +125,7 @@ input,
 button {
   padding: 0;
   &:focus {
-    outline: -webkit-focus-ring-color auto 0px;
+    outline: -webkit-focus-ring-color auto 0;
   }
 }
 
@@ -188,6 +188,7 @@ a:hover {
     height: 0;
   }
 }
+
 
 // 饿了么主题
 

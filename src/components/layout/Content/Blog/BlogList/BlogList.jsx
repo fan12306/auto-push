@@ -1,10 +1,11 @@
 import React from 'react';
-import './Blog.scss'
+import './BlogList.scss'
 import {Button, Space, Table, Tag} from 'antd'
+// import Blog from "@/model/blog";
 
 const {Column} = Table
 
-const Blog = () => {
+const BlogList = () => {
     const data = [
         {
             key: '1',
@@ -34,6 +35,12 @@ const Blog = () => {
             tags: [{tag: 'js', color: '#f50'}, {tag: 'es6', color: '#2db7f5'}],
         },
     ];
+    // let [result] = useState([])
+
+
+    // useEffect(() => {
+    //     result = getBlogList();
+    // })
     return (
         <div className="blog-container">
             <div className="header">
@@ -58,27 +65,8 @@ const Blog = () => {
                         </>
                     )}
                 />
-                {/*<Column title={'分类'} dataIndex={'category'} key={'category'} render={tags => (*/}
-                {/*    <>*/}
-                {/*        {tags.map(tag => (*/}
-                {/*            <Tag color={tag.color} key={tag.tag}>*/}
-                {/*                {tag.tag}*/}
-                {/*            </Tag>*/}
-                {/*        ))}*/}
-                {/*    </>*/}
-                {/*)}/>*/}
-                {/*<Column title={'状态'} dataIndex={'status'} key={'status'} render={tags => (*/}
-                {/*    <>*/}
-                {/*        {tags.map(tag => (*/}
-                {/*            <Tag color={tag.color} key={tag.tag}>*/}
-                {/*                {tag.tag}*/}
-                {/*            </Tag>*/}
-                {/*        ))}*/}
-                {/*    </>*/}
-                {/*)}/>*/}
                 <Column title="发布日期" dataIndex="publishData" key="publishData"/>
-                <Column title="备注" dataIndex="note" key="note"/>
-
+                <Column title="发布日期" dataIndex="publishData" key="publishData"/>
                 <Column
                     title="操作"
                     key="action"
@@ -95,4 +83,8 @@ const Blog = () => {
     );
 };
 
-export default Blog;
+// const getBlogList =  async () => {
+//     return await new Blog().getAllBlog()
+// }
+
+export default BlogList;

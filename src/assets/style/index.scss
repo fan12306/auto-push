@@ -7,9 +7,10 @@
 @import "../iconfont/iconfont.css";
 @import "./realize/test.less";
 
+* { touch-action: none; }
 .lin-container {
   .el-divider--horizontal {
-    margin:0px;
+    margin:0;
   }
   .lin-title {
     height: 59px;

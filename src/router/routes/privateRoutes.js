@@ -2,8 +2,9 @@
 // import Home from "@pages/Home/Home.jsx";
 import About from "@components/layout/Content/About/About.jsx";
 import Analysis from '@/components/layout/Content/Analysis/Analysis'
-import Blog from "@components/layout/Content/Blog/BlogList/Blog.jsx";
+import BlogList from "@components/layout/Content/Blog/BlogList/BlogList.jsx";
 import BlogEdit from "@components/layout/Content/Blog/BlogEdit/BlogEdit.jsx";
+import BlogDetail from "@components/layout/Content/Blog/BlogDetail/BlogDetail.jsx";
 // import Center from "@components/layout/Content/Center/Center.jsx";
 
 const privateRoutes = [
@@ -11,7 +12,7 @@ const privateRoutes = [
         title: '林间有风',
         type: 'view',
         name: 'about', // 可以设计为Symbol类型
-        route: '/about',
+        path: '/about',
         filePath: 'pages/About/About.jsx',
         inNav: true,
         icon: 'iconfont icon-information',
@@ -24,7 +25,7 @@ const privateRoutes = [
         title: '数据分析',
         type: 'view',
         name: 'dataAnalysis', // 可以设计为Symbol类型
-        route: '/dataAnalysis',
+        path: '/dataAnalysis',
         filePath: 'pages/About/About.jsx',
         inNav: true,
         icon: 'iconfont icon-data',
@@ -48,20 +49,20 @@ const privateRoutes = [
                 title: '博客列表',
                 type: 'view',
                 name: 'blogList', // 可以设计为Symbol类型
-                route: '/blogManage/blogList',
+                path: '/blogManage/blogList',
                 // filePath: 'pages/About/About.jsx',
                 inNav: true,
                 icon: 'iconfont icon-data',
                 permissions: [],
                 order: 2,
                 breadcrumbName: 'blogList',
-                component: Blog,
+                component: BlogList,
             },
             {
                 title: '添加博客',
                 type: 'view',
                 name: 'blogEdit', // 可以设计为Symbol类型
-                route: '/blogManage/blogEdit',
+                path: '/blogManage/blogEdit',
                 // filePath: 'pages/About/About.jsx',
                 inNav: true,
                 icon: 'iconfont icon-data',
@@ -69,6 +70,19 @@ const privateRoutes = [
                 order: 2,
                 breadcrumbName: 'blogEdit',
                 component: BlogEdit,
+            },
+            {
+                title: '博客详情',
+                type: 'view',
+                name: 'blogDetail', // 可以设计为Symbol类型
+                path: '/blogManage/blogDetail',
+                // filePath: 'pages/About/About.jsx',
+                inNav: false,
+                icon: 'iconfont icon-data',
+                permissions: [],
+                order: 2,
+                breadcrumbName: 'blogDetail',
+                component: BlogDetail,
             }
         ]
     }

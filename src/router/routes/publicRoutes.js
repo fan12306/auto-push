@@ -4,20 +4,21 @@ import AuthPage from "@pages/AuthPage/AuthPage.jsx";
 
 const publicRoutes = [
     {
-        route: '/login',
+        path: '/login',
         name: 'login',
         exact: true,
         component: PageLogin
     },
     {
-        route: '/403',
+        path: '/403',
         name: 'forbidden',
         exact: true,
         component: AuthPage
     },
     {
-        route: '/404',
+        path: '/404',
         name: '404',
+        exact: false,
         component: ErrorPage
     }
 ]

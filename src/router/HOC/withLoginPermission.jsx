@@ -16,7 +16,11 @@ const withLoginPermissionWrapper = Wrapper => {
                         await User.getUser()
                         setLoading(false)
                     }
-                    fetch();
+                    fetch().then(() => {
+                        // console.log('im in res', res)
+                    })
+                }else {
+                    setLoading(false)
                 }
             } else {
                 setLoading(false)

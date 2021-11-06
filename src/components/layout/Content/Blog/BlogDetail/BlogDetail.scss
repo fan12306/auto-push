@@ -1,5 +1,5 @@
 @import '~@/assets/style/share.scss';
-.header {
+.blog-detail-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -16,6 +16,19 @@
   }
 }
 
-.edit-wrapper {
-  padding: 20px;
+.blog-detail-body {
+  text-align: center;
+  padding: 10px 20px;
+  display: flex;
+  .blog-detail-content {
+    flex: 1;
+    h1 {
+      font-size: 30px;
+    }
+  }
+
+  .blog-detail-context {
+    width: 200px;
+  }
+
 }

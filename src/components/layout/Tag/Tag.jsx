@@ -21,7 +21,7 @@ const renderNavLink = (tags, handleCloseTag, handleClickTag) => {
     }
     return tags.map(tag => {
         return (
-            <NavLink activeClassName={'active'} to={tag.route} className={'reuse-tab-item'} key={tag.route}
+            <NavLink activeClassName={'active'} to={tag.path} className={'reuse-tab-item'} key={tag.path}
                      onClick={(e) => clickTag(e, handleClickTag, tag)}>
                 <li className="menu-li">
                     <i className={tag.icon}/>

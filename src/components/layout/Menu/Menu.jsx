@@ -2,19 +2,22 @@ import React, {useEffect, useMemo} from 'react';
 import {Menu} from 'antd';
 import {Link, useLocation} from 'react-router-dom'
 import './Menu.scss'
+import {PieChartOutlined} from '@ant-design/icons'
 
 const {SubMenu} = Menu;
 
 const RenderMenu = ({menus, handleClickMenuItem}) => {
     const location = useLocation();
 
-    // eslint-disable-line react-hooks/exhaustive-deps
+
     useEffect(() => {
         // 默认渲染的时候将defaultKey传递出去；
+        // eslint-disable-line react-hooks/exhaustive-deps
         const menuList = location.pathname.slice(1).split('/');
+        // eslint-disable-line react-hooks/exhaustive-deps
         const defaultMenuItem = getMenuList()(menuList, menus)
         handleClickMenuItem(defaultMenuItem);
-    }, [])
+    }, [location, menus, handleClickMenuItem])
 
     /**
      *  根据location.pathname进行变化，获取selectedKey
@@ -47,6 +50,8 @@ const renderSubMenu = (subItem, handleClickMenuItem) => {
             title={
                 <span>{subItem?.title}</span>
             }
+            // icon={<i className={subItem?.icon}/>}
+            icon={<PieChartOutlined />}
         >
             {subItem.children ? renderMenu(subItem.children, handleClickMenuItem) : renderMenuItem(subItem, handleClickMenuItem)}
         </SubMenu>
@@ -55,13 +60,15 @@ const renderSubMenu = (subItem, handleClickMenuItem) => {
 }
 
 const renderMenuItem = (item, handleClickMenuItem) => {
+    // 如果inNav为false，那么将不放入menu中
+    if (!item.inNav) return
     return (
         <Menu.Item
             key={item.name}
             onClick={() => handleClickMenuItem(item)}
             icon={<i className={item.icon}/>}
         >
-            <Link to={item.route} href={item.route}>
+            <Link to={item.path} href={item.path}>
                 <span>{item?.title}</span>
             </Link>
         </Menu.Item>
@@ -87,7 +94,7 @@ const getMenuList = () => {
     const step = (defaultMenuList, routes) => {
         const tempMenu = defaultMenuList.shift();
         target = routes.find(item => item.breadcrumbName === tempMenu);
-        if (defaultMenuList.length) {
+        if (defaultMenuList.length && target.children) {
             return step(defaultMenuList, target.children)
         }
         return target

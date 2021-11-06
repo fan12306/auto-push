@@ -17,13 +17,17 @@ class User {
     }
 
     static async getUser() {
-        const result = await get('/cms/user/information')
+        const result = await get('/cms/user/information', {
+            handleError: true
+        })
         store.dispatch(setUserInfo(result));
         store.dispatch(setLoginAction(true));
     }
 
     static async getPermissions() {
-        const result = await get('/cms/user/permissions');
+        const result = await get('/cms/user/permissions', {
+            handleError: true
+        });
         store.dispatch(setPermissions(result))
     }
 

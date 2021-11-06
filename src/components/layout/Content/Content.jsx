@@ -1,13 +1,16 @@
 import React from 'react';
-import {Switch} from "react-router";
+// import User from "@/model/user";
+import {Switch, useLocation} from "react-router";
 import {UserPermissionRouter} from "@router/HOC";
 import privateRoutes from "@router/routes/privateRoutes";
-// import User from "@/model/user";
+import {Redirect} from 'react-router-dom'
 
 const LayoutContent = (props) => {
+    const location = useLocation()
     return (
         <Switch>
             {renderRoute(privateRoutes, props)}
+            {redirectRouter(location.pathname)}
         </Switch>
     );
 };
@@ -19,9 +22,9 @@ const renderRoute = (routes, props) => {
         } else {
             return (
                 <UserPermissionRouter
-                    exact
+                    exact={route.exact}
                     key={route.name}
-                    path={route.route}
+                    path={route.path}
                     routePermission={route.permissions}
                     component={route.component}
                     {...props}
@@ -29,6 +32,10 @@ const renderRoute = (routes, props) => {
             )
         }
     })
+}
+
+const redirectRouter = (pathname) => {
+    return pathname === '/' ? <Redirect to={'/login'}/> : <Redirect to={'/404'} from={'/*'}/>
 }
 
 

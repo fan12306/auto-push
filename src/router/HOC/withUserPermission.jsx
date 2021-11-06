@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import { Redirect } from 'react-router-dom';
+import {Redirect} from 'react-router-dom';
 import User from '@/model/user'
 import LoadingPage from "@pages/LoadingPage/LoadingPage.jsx";
+import {getToken} from "@/utils/localstorage";
 
 const withUserPermissionWrapper = Wrapper => {
     return hocProps => {
@@ -10,11 +11,18 @@ const withUserPermissionWrapper = Wrapper => {
         const [isLoading, setLoading] = useState(true);
         useEffect(() => {
             if (!permissions?.permissions) {
-                const fetch = async () => {
-                    await User.getPermissions()
-                    setLoading(false)
-                }
-                fetch()
+                const assessToken = getToken('access_token')
+                    if (assessToken) {
+                        const fetch = async () => {
+                            await User.getPermissions()
+                            setLoading(false)
+                        }
+                        fetch().then(() => {
+                            // console.log('im in', res)
+                        })
+                    }else {
+                        setLoading(false)
+                    }
             } else {
                 setLoading(false)
             }
@@ -41,10 +49,10 @@ function isAllowed({admin, permissions}, _permission) {
     /* eslint-disable no-restricted-syntax */
     /* eslint-disable guard-for-in */
 
-    if(admin) {
+    if (admin) {
         return true
     }
-    if(!permissions) {
+    if (!permissions) {
         return false
     }
     for (const mod of permissions) {
