@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Button, Col, Form, Input, Row, Select} from 'antd'
 import './BlogEdit.scss'
 import Blog from "@/model/blog";
-import BraftEditorComponent from "@components/layout/Content/Blog/BlogEdit/components/BraftEditor.jsx";
+import BraftEditorComponent from "@pages/ContentPage/Blog/BlogEdit/components/BraftEditor.jsx";
 
 const BlogEdit = () => {
     const [title, setTitle] = useState('');

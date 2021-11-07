@@ -1,9 +1,9 @@
 import React from 'react';
-import DataColumn from "@components/layout/Content/Analysis/components/DataColumn/DataColumn.jsx";
-import DataRadar from "@components/layout/Content/Analysis/components/DataRadar/DataRadar.jsx";
-import DataTiny from "@components/layout/Content/Analysis/components/DataTiny/DataTiny.jsx";
-import DataRose from "@components/layout/Content/Analysis/components/DataRose/DataRose.jsx";
-import DataLine from "@components/layout/Content/Analysis/components/DataLine/DataLine.jsx";
+import DataColumn from "@pages/ContentPage/Analysis/components/DataColumn/DataColumn.jsx";
+import DataRadar from "@pages/ContentPage/Analysis/components/DataRadar/DataRadar.jsx";
+import DataTiny from "@pages/ContentPage/Analysis/components/DataTiny/DataTiny.jsx";
+import DataRose from "@pages/ContentPage/Analysis/components/DataRose/DataRose.jsx";
+import DataLine from "@pages/ContentPage/Analysis/components/DataLine/DataLine.jsx";
 import './Analysis.scss'
 import {Col, Row} from 'antd'
 

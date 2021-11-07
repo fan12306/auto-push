@@ -1,10 +1,10 @@
 // import About from "@pages/About/About.jsx";
 // import Home from "@pages/Home/Home.jsx";
-import About from "@components/layout/Content/About/About.jsx";
-import Analysis from '@/components/layout/Content/Analysis/Analysis'
-import BlogList from "@components/layout/Content/Blog/BlogList/BlogList.jsx";
-import BlogEdit from "@components/layout/Content/Blog/BlogEdit/BlogEdit.jsx";
-import BlogDetail from "@components/layout/Content/Blog/BlogDetail/BlogDetail.jsx";
+import About from "@components/../../pages/ContentPage/About/About.jsx";
+import Analysis from '@/pages/ContentPage/Analysis/Analysis'
+import BlogList from "@components/../../pages/ContentPage/Blog/BlogList/BlogList.jsx";
+import BlogEdit from "@components/../../pages/ContentPage/Blog/BlogEdit/BlogEdit.jsx";
+import BlogDetail from "@components/../../pages/ContentPage/Blog/BlogDetail/BlogDetail.jsx";
 // import Center from "@components/layout/Content/Center/Center.jsx";
 
 const privateRoutes = [

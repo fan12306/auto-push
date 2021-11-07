@@ -3,9 +3,9 @@ import './About.scss'
 import welcome from '@/assets/image/about/welcome.png'
 import headerBg from '@/assets/image/about/header-bg.png'
 import qrcode from '@/assets/image/about/qrcode.jpg'
-import QuantityItem from "@components/layout/Content/About/components/QuantityItem/QuantityItem.jsx";
-import Personal from "@components/layout/Content/About/components/Personal/Personal.jsx";
-import Articular from "@components/layout/Content/About/components/Artical/Artical.jsx";
+import QuantityItem from "@pages/ContentPage/About/components/QuantityItem/QuantityItem.jsx";
+import Personal from "@pages/ContentPage/About/components/Personal/Personal.jsx";
+import Articular from "@pages/ContentPage/About/components/Artical/Artical.jsx";
 
 const About = () => {
     const [quantities] = useState([
