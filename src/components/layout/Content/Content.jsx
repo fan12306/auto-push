@@ -3,7 +3,7 @@ import React from 'react';
 import {Switch, useLocation} from "react-router";
 import {UserPermissionRouter} from "@router/HOC";
 import privateRoutes from "@router/routes/privateRoutes";
-import {Redirect} from 'react-router-dom'
+import {Redirect, Route} from 'react-router-dom'
 
 const LayoutContent = (props) => {
     const location = useLocation()
@@ -20,16 +20,23 @@ const renderRoute = (routes, props) => {
         if (route.children) {
             return renderRoute(route.children, props);
         } else {
-            return (
-                <UserPermissionRouter
+            return props.isLogin
+                ?  <UserPermissionRouter
                     exact={route.exact}
                     key={route.name}
                     path={route.path}
                     routePermission={route.permissions}
                     component={route.component}
                     {...props}
-                />
-            )
+                    />
+                :  <Route
+                    exact={route.exact}
+                    key={route.name}
+                    path={route.path}
+                    routePermission={route.permissions}
+                    component={route.component}
+                    {...props}
+                    />
         }
     })
 }

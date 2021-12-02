@@ -25,7 +25,7 @@ const withLoginPermissionWrapper = Wrapper => {
             } else {
                 setLoading(false)
             }
-        }, [isLogin])
+        }, [])
         return (
             <Wrapper {...rest} component={props => {
                 return isLogin

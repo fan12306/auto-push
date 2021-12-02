@@ -5,11 +5,11 @@ class Blog {
         this.prefix = 'v1/blog'
     }
     async getAllBlog() {
-        await get(this.prefix)
+        return await get(this.prefix)
     }
 
     async getBlogById(params) {
-        await get(this.prefix + '?id=' + params)
+       return await get(this.prefix + '/'+params)
     }
 
     async updateBlog(params) {

@@ -18,7 +18,6 @@ const withUserPermissionWrapper = Wrapper => {
                             setLoading(false)
                         }
                         fetch().then(() => {
-                            // console.log('im in', res)
                         })
                     }else {
                         setLoading(false)
@@ -26,7 +25,8 @@ const withUserPermissionWrapper = Wrapper => {
             } else {
                 setLoading(false)
             }
-        }, [permissions?.permissions])
+        }, [])
+        console.log(hasPermission);
         return (
             <Wrapper {...rest} component={props => {
                 return hasPermission
@@ -48,7 +48,6 @@ export default withUserPermissionWrapper
 function isAllowed({admin, permissions}, _permission) {
     /* eslint-disable no-restricted-syntax */
     /* eslint-disable guard-for-in */
-
     if (admin) {
         return true
     }

@@ -53,10 +53,7 @@ _axios.interceptors.request.use(
     if (!reqConfig.url) {
       /* eslint-disable-next-line */
       console.error('request need url')
-      throw new Error({
-        source: 'axiosInterceptors',
-        message: 'request need url',
-      })
+      throw new Error('request need url')
     }
 
     if(process.env.NODE_ENV !== "development") {
@@ -68,6 +65,7 @@ _axios.interceptors.request.use(
       reqConfig.method = 'get'
     }
     // 大小写容错
+    // @ts-ignore
     reqConfig.method = reqConfig.method.toLowerCase()
 
     // 参数容错
@@ -153,6 +151,7 @@ _axios.interceptors.response.use(
             } = window.location
             window.location.href = origin
           }, 1500)
+          // @ts-ignore
           return resolve(null)
         }
         // assessToken相关，刷新令牌
@@ -161,6 +160,7 @@ _axios.interceptors.response.use(
           if (cache.url !== url) {
             cache.url = url
             const refreshResult = await _axios('cms/user/refresh')
+            // @ts-ignore
             saveAccessToken(refreshResult.access_token)
             // 将上次失败请求重发
             const result = await _axios(res.config)
@@ -168,10 +168,12 @@ _axios.interceptors.response.use(
           }
         }
         // 第一种情况：默认直接提示后端返回的异常信息；特殊情况：如果本次请求添加了 handleError: true，用户自己try catch，框架不做处理
+        // @ts-ignore
         if (res.config?.config?.handleError) {
           return reject(res)
         }
         // 第二种情况：采用前端自己的一套异常提示信息；特殊情况：如果本次请求添加了 showBackend: true, 弹出后端返回错误信息。
+        // @ts-ignore
         if (Config.useFrontEndErrorMsg && !res.config.showBackend) {
           // 弹出前端自定义错误信息
           const errorArr = Object.entries(ErrorCode).filter(v => v[0] === code.toString())
@@ -241,9 +243,10 @@ _axios.interceptors.response.use(
 /**
  * @param {string} url
  * @param {object} data
- * @param {object} params
+ * @param {object} config
  */
 export function post(url, data = {}, config = {}) {
+  // @ts-ignore
   return _axios({
     method: 'post',
     url,
@@ -254,9 +257,10 @@ export function post(url, data = {}, config = {}) {
 
 /**
  * @param {string} url
- * @param {object} params
+ * @param config
  */
 export function get(url, config = {}) {
+  // @ts-ignore
   return _axios({
     method: 'get',
     url,
@@ -267,9 +271,10 @@ export function get(url, config = {}) {
 /**
  * @param {string} url
  * @param {object} data
- * @param {object} params
+ * @param config
  */
 export function put(url, data = {}, config = {}) {
+  // @ts-ignore
   return _axios({
     method: 'put',
     url,
@@ -280,9 +285,10 @@ export function put(url, data = {}, config = {}) {
 
 /**
  * @param {string} url
- * @param {object} params
+ * @param config
  */
 export function _delete(url, config = {}) {
+  // @ts-ignore
   return _axios({
     method: 'delete',
     url,

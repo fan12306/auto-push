@@ -2,6 +2,8 @@ import React from "react";
 import './BlogDetail.scss'
 
 const BlogDetail = () => {
+
+
     return (
         <div className={"blog-detail-container"}>
             <div className="blog-detail-header">

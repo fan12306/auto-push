@@ -1,4 +1,4 @@
-import React, {useEffect, useMemo} from 'react';
+import React, {useEffect, useMemo, useState} from 'react';
 import {Menu} from 'antd';
 import {Link, useLocation} from 'react-router-dom'
 import './Menu.scss'
@@ -8,7 +8,6 @@ const {SubMenu} = Menu;
 
 const RenderMenu = ({menus, handleClickMenuItem}) => {
     const location = useLocation();
-
 
     useEffect(() => {
         // 默认渲染的时候将defaultKey传递出去；
@@ -28,11 +27,10 @@ const RenderMenu = ({menus, handleClickMenuItem}) => {
         return pathArray[pathArray.length - 1];
     }, [location.pathname])
 
-
     return (
         <Menu
             defaultSelectedKeys={[location.pathname]}
-            defaultOpenKeys={['sub1']}
+            defaultOpenKeys={['blogEdit']}
             mode="inline"
             theme="dark"
             collapsed={'collapsed'}
@@ -101,4 +99,5 @@ const getMenuList = () => {
     }
     return step
 }
+
 export default RenderMenu;

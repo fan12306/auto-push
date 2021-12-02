@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import {Button, Col, Form, Input, Row, Select} from 'antd'
-import './BlogEdit.scss'
+import TheEditor from "@pages/ContentPage/Blog/BlogEdit/components/editor/TheEditor.jsx";
 import Blog from "@/model/blog";
-import BraftEditorComponent from "@pages/ContentPage/Blog/BlogEdit/components/BraftEditor.jsx";
+import './BlogEdit.scss'
 
 const BlogEdit = () => {
     const [title, setTitle] = useState('');
@@ -23,10 +23,16 @@ const BlogEdit = () => {
     /**
      * tags与status的请求
      */
+    // useEffect(() => {
+    //    const res =  async () => {
+    //         const result = await initBlogConfig();
+    //         setTypeList(result.typeList)
+    //         setStatusList(result.statusList)
+    //     }
+    // }, [])
     useEffect(() => {
         const fetch = async () => {
             const result = await initBlogConfig();
-            console.log('re', result)
             setTypeList(result.typeList)
             setStatusList(result.statusList)
         }
@@ -45,11 +51,8 @@ const BlogEdit = () => {
     }
 
     const handleGetContent = async (value) => {
-        setContent(value.toHTML());
-        console.log('content', content);
+        setContent(value);
     }
-
-
 
     return (
         <div>
@@ -99,7 +102,7 @@ const BlogEdit = () => {
                                 </Row>
                             </Form.Item>
                             <Form.Item label={'博客内容'} rows={7}>
-                               <BraftEditorComponent handleGetContent={handleGetContent}/>
+                               <TheEditor handleGetContent={handleGetContent} />
                             </Form.Item>
                             <Form.Item {...tailLayout}>
                                 <Button type="primary" onClick={handleSubmit} loading={false}>提交</Button>
@@ -114,7 +117,7 @@ const BlogEdit = () => {
 
 /***
  * 初始化博客页面
- * @return {Promise<{typeList: *, statusList: *}>}
+ * @return {Promise<{typeList: *, statusList: *a}>}
  */
 const initBlogConfig = async () => {
     const typeList = await new Blog().getBlogTypeList();

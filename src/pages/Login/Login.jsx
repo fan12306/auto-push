@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import teamName from '@/assets/image/login/team-name.png'
 import './Login.scss'
 
-const PageLogin = (props) => {
+const PageLogin = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const history = useHistory()

@@ -1,17 +1,17 @@
 import React, { useState} from "react";
 import {Layout} from 'antd';
-import Operator from '@/components/layout/Operator/Operator'
-import logo from '@/assets/image/logo.png'
-import NavTag from "@components/layout/Tag/Tag.jsx";
-import mobile_logo from '@/assets/image/mobile-logo.png'
-import RenderMenu from '@/components/layout/Menu/Menu'
 import privateRoutes from "@router/routes/privateRoutes";
-import './Home.scss'
-import LayoutContent from "@components/layout/Content/Content.jsx";
 import {connect} from "react-redux";
+import { BackTop } from 'antd';
+import Operator from '@/components/layout/Operator/Operator'
+import NavTag from "@components/layout/Tag/Tag.jsx";
+import RenderMenu from '@/components/layout/Menu/Menu'
+import LayoutContent from "@components/layout/Content/Content.jsx";
 import {delTagsAction, setTagsAction, matchTagAction} from "@store/actions";
 import {useHistory} from "react-router";
-import { BackTop } from 'antd';
+import logo from '@/assets/image/logo.png'
+import mobile_logo from '@/assets/image/mobile-logo.png'
+import './Home.scss'
 
 const {Sider, Content} = Layout;
 

@@ -4,7 +4,6 @@ import {Route, Switch} from 'react-router'
 import publicRoutes from "@router/routes/publicRoutes";
 import Layout from '@/pages/Home/Home'
 import {connect} from "react-redux";
-// import { useLocation } from "react-router-dom";
 
 const Router = (props) => {
     return (
