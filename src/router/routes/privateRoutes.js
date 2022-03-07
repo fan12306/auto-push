@@ -48,40 +48,40 @@ const privateRoutes = [
             {
                 title: '博客列表',
                 type: 'view',
-                name: 'blogList', // 可以设计为Symbol类型
-                path: '/blogManage/blogList',
+                name: 'list', // 可以设计为Symbol类型
+                path: '/blogManage/list',
                 // filePath: 'pages/About/About.jsx',
                 inNav: true,
-                icon: 'iconfont icon-data',
+                // icon: 'iconfont icon-data',
                 permissions: [],
                 order: 2,
-                breadcrumbName: 'blogList',
+                breadcrumbName: 'list',
                 component: BlogList,
             },
             {
                 title: '添加博客',
                 type: 'view',
-                name: 'blogEdit', // 可以设计为Symbol类型
-                path: '/blogManage/blogEdit',
+                name: 'edit', // 可以设计为Symbol类型
+                path: '/blogManage/edit',
                 // filePath: 'pages/About/About.jsx',
                 inNav: true,
-                icon: 'iconfont icon-data',
+                // icon: 'iconfont icon-data',
                 permissions: [],
                 order: 2,
-                breadcrumbName: 'blogEdit',
+                breadcrumbName: 'edit',
                 component: BlogEdit,
             },
             {
                 title: '博客详情',
                 type: 'view',
-                name: 'blogDetail', // 可以设计为Symbol类型
-                path: '/blogManage/blogDetail',
+                name: 'detail', // 可以设计为Symbol类型
+                path: '/blogManage/detail',
                 // filePath: 'pages/About/About.jsx',
                 inNav: false,
                 icon: 'iconfont icon-data',
                 permissions: [],
                 order: 2,
-                breadcrumbName: 'blogDetail',
+                breadcrumbName: 'detail',
                 component: BlogDetail,
             }
         ]

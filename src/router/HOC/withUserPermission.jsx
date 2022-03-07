@@ -25,7 +25,7 @@ const withUserPermissionWrapper = Wrapper => {
             } else {
                 setLoading(false)
             }
-        }, [])
+        }, [permissions?.permissions])
         console.log(hasPermission);
         return (
             <Wrapper {...rest} component={props => {

@@ -20,7 +20,6 @@ const resolvePost = req =>
     });
 
 http.createServer(async (req, res) => {
-
     if (req.method === 'POST' && req.url === '/') {
         const data = await resolvePost(req);
         const remoteAddress = data.repository.ssh_url;

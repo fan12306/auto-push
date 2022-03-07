@@ -1,7 +1,6 @@
 @import '~@/assets/style/share.scss';
 
 .blog-container {
-  padding: 0 30px;
 
   .header {
     display: flex;
@@ -15,5 +14,9 @@
       font-size: 16px;
       font-weight: 500;
     }
+  }
+
+  .blog-content {
+    padding: 0 30px;
   }
 }

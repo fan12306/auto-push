@@ -37,12 +37,12 @@ const renderNavLink = (tags, handleCloseTag, handleClickTag) => {
 }
 
 const clickTag = (e, handleClickTag, tag) => {
-    // 通过id来进行冒泡捕捉
-    if (e.target?.id === 'inner') {
-        e.preventDefault()
-        return
-    }
-    handleClickTag(tag)
-}
+  // 通过id来进行冒泡捕捉
+  if (e.target?.id === "inner") {
+    e.preventDefault();
+    return;
+  }
+  handleClickTag(tag);
+};
 
 export default NavTag;

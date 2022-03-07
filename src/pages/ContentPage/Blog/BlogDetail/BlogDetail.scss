@@ -1,34 +1,50 @@
 @import '~@/assets/style/share.scss';
-.blog-detail-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 
-  .title {
-    width: 100%;
-    height: 59px;
-    line-height: 59px;
-    color: $parent-title-color;
-    font-size: 16px;
-    font-weight: 500;
-    text-indent: 40px;
-    border-bottom: 1px solid #dae1ec;
-  }
-}
+.blog-detail-container {
+  position: relative;
+  z-index: 1;
 
-.blog-detail-body {
-  text-align: center;
-  padding: 10px 20px;
-  display: flex;
-  .blog-detail-content {
-    flex: 1;
-    h1 {
-      font-size: 30px;
+  .blog-detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .title {
+      width: 100%;
+      height: 59px;
+      line-height: 59px;
+      color: $parent-title-color;
+      font-size: 16px;
+      font-weight: 500;
+      text-indent: 40px;
+      border-bottom: 1px solid #dae1ec;
     }
   }
 
-  .blog-detail-context {
-    width: 200px;
-  }
+  .blog-detail-body {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    header {
+      margin: 0 0 1.667rem;
+      font-size: 2.667rem;
+      font-weight: 600;
+      line-height: 1.31;
+      color: #252933;
+      text-align: center;
+    }
+    .blog-detail-content {
+      text-align: center;
+      h1 {
+        font-size: 30px;
+      }
+    }
 
+    .blog-detail-context {
+      width: 200px;
+    }
+
+  }
 }

@@ -1,4 +1,4 @@
-import {get, post} from "@/utils/axios";
+import {get, post, put, _delete} from "@/utils/axios";
 
 class Blog {
     constructor() {
@@ -12,16 +12,22 @@ class Blog {
        return await get(this.prefix + '/'+params)
     }
 
-    async updateBlog(params) {
-        return await post(this.prefix + '/update', params)
+    async updateBlog(id, params) {
+        return await put(`${this.prefix}/${id}`, params, {
+            showMsg: true
+        })
     }
 
     async deleteBlog(params) {
-        return await post(this.prefix + '/delete', params)
+        return await _delete (`${this.prefix}/${params}`, {
+            showMsg: true
+        });
     }
 
     async createBlog(params) {
-        return await post(this.prefix, params)
+        return await post(this.prefix, params, {
+            showMsg: true
+        })
     }
 
     async getBlogTypeList() {

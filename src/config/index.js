@@ -9,6 +9,7 @@ const Config = {
   showSidebarSearch: true, // 默认打开侧边栏搜索
   defaultRoute: '/about', // 默认打开的路由
   useFrontEndErrorMsg: false, // 默认采用后端返回异常
+  defaultOpenKeys: ['blogManage'] // 默认展开的子菜单
 }
 
 export default Config

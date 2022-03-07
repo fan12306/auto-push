@@ -13,6 +13,7 @@ const config = {
   baseURL: process.env.NODE_ENV === "development" ? Config.devBaseURL || process.env.apiUrl || '' : Config.baseURL,
   timeout: 5 * 1000, // 请求超时时间设置
   crossDomain: true,
+  config: {},
   // withCredentials: true, // Check cross-site Access-Control
   // 定义可获得的http响应状态码
   // return true、设置为null或者undefined，promise将resolved,否则将rejected
@@ -122,7 +123,7 @@ _axios.interceptors.request.use(
     return reqConfig
   },
   error => {
-    Promise.reject(error)
+    return Promise.reject(error)
   },
 )
 
@@ -135,6 +136,10 @@ _axios.interceptors.response.use(
       } = res.data // eslint-disable-line
 
       if (res.status.toString().charAt(0) === '2') {
+        // @ts-ignore
+        if(res.config?.config?.showMsg) {
+          antMessage.success(res.data.message)
+        }
         return res.data
       }
       return new Promise(async (resolve, reject) => {
@@ -156,7 +161,7 @@ _axios.interceptors.response.use(
         }
         // assessToken相关，刷新令牌
         if (code === 10041 || code === 10051) {
-          const cache = {}
+          const cache = {url: ''}
           if (cache.url !== url) {
             cache.url = url
             const refreshResult = await _axios('cms/user/refresh')
@@ -215,31 +220,7 @@ _axios.interceptors.response.use(
     },
 )
 
-// // eslint-disable-next-line
-// Plugin.install = function(Vue, options) {
-//   // eslint-disable-next-line
-//   Vue.axios = _axios
-//   window.axios = _axios
-//   Object.defineProperties(Vue.prototype, {
-//     axios: {
-//       get() {
-//         return _axios
-//       },
-//     },
-//     $axios: {
-//       get() {
-//         return _axios
-//       },
-//     },
-//   })
-// }
-//
-// if (!Vue.axios) {
-//   Vue.use(Plugin)
-// }
-
 // 导出常用函数
-
 /**
  * @param {string} url
  * @param {object} data
@@ -286,8 +267,9 @@ export function put(url, data = {}, config = {}) {
 /**
  * @param {string} url
  * @param config
+ * @param p
  */
-export function _delete(url, config = {}) {
+export function _delete(url, config = {}, p) {
   // @ts-ignore
   return _axios({
     method: 'delete',
